@@ -2,7 +2,7 @@
 let amigos = [];
 
 // Implementa una función para agregar amigos
-function agregarAmigos() {
+function agregarAmigo() {
     // Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
     let nombreIngresado = document.getElementById('amigo').value.trim(); // trim() para evitar que se agreguen espacios en blanco como nombres válidos.
 
@@ -16,6 +16,28 @@ function agregarAmigos() {
         // Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
         document.getElementById('amigo').value = '';
     }
+}
+
+// Implementa una función para actualizar la lista de amigos.
+// Crea una función que recorra el array amigos y agregue cada nombre como un elemento <li> dentro de una lista HTML. 
+// Usa innerHTML para limpiar la lista antes de agregar nuevos elementos.
+
+function actualizarLista() {
+
+// Obtener el elemento de la lista: Utilizar document.getElementById() o document.querySelector() para seleccionar la lista donde se mostrarán los amigos.
+    let listaElemento = document.getElementById('listaAmigos');
+
+// Limpiar la lista existente: Establecer lista.innerHTML = "" para asegurarse de que no haya duplicados al actualizar.
+    listaElemento.innerHTML = '';
+
+// Iterar sobre el arreglo: Usa un bucle for para recorrer el arreglo amigos y crear elementos de lista (<li>) para cada título.
+// Agregar elementos a la lista: Para cada amigo, crear un nuevo elemento de lista.
+    for (let i = 0; i < amigos.length; i++) {
+        let li = document.createElement('li');
+        li.textContent = amigos[i];
+        listaElemento.appendChild(li);
+    }
+    
 }
 
 
