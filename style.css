@@ -87,11 +87,6 @@ body {
     font-size: 16px;
 }
 
-.button-container {
-    width: 300px;
-    justify-content: center;
-}
-
 /* Estilos de entrada de texto */
 .input-title {
     flex: 1;
@@ -134,6 +129,21 @@ ul {
     margin: 20px 0;
 }
 
+/* Lista horizontal de amigos */
+.name-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.name-list li {
+    background-color: var(--color-tertiary);
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
 .result-list {
     margin-top: 15px;
     color: #05DF05;
@@ -146,7 +156,6 @@ ul {
 .button-draw {
     display: flex;
     align-items: center;
-    width: 100%;
     padding: 10px 40px;
     color: var(--color-white);
     background-color: var(--color-button);
@@ -159,4 +168,22 @@ ul {
 
 .button-draw:hover {
     background-color: var(--color-button-hover);
+}
+
+/* Contenedor de botones juntos */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+/* Botón "Nuevo sorteo" */
+.button-new {
+    background-color: #00aaff;
+    color: var(--color-white);
+}
+
+.button-new:hover {
+    background-color: #0088cc;
 }
