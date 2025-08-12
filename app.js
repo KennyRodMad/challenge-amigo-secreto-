@@ -46,9 +46,12 @@ function sortearAmigo() {
 // Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
     if (amigos.length == 0) {
         alert('No has ingresado el nombre de ningún amigo. Por favor, ingresa los nombres');
+        return;
     } else if (amigos.length == 1){
         alert('Solo has ingresado un nombre. Por favor, ingresa otros nombres para que el juego sea más divertido');
+        return;
     } else {
+    // Sorteo
     // Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
         let indiceAleatorio = Math.floor(Math.random() * amigos.length);
     // Obtener el nombre sorteado: Utilizar el índice aleatorio para acceder al nombre correspondiente en el arreglo.
@@ -56,7 +59,16 @@ function sortearAmigo() {
         console.log(amigoSorteado);
     // Mostrar el resultado: Actualizar el contenido del elemento de resultado utilizando document.getElementById() e innerHTML para mostrar el amigo sorteado.
         let resultado = document.getElementById('resultado');
-        resultado.innerHTML = `El amigo secreto es ${amigoSorteado}`;
+        resultado.innerHTML = `El amigo secreto es <strong>${amigoSorteado}</strong>`;
+
+    // Ocultar lista de amigos
+        document.getElementById('listaAmigos').style.display = 'none';
+    // Deshabilitar controles
+        document.getElementById('amigo').disabled = true;
+        document.querySelector('.button-add').disabled = true;
+        document.getElementById('btnSortear').disabled = true;
+    // Habilitar "Nuevo sorteo"
+        document.getElementById('btnNuevo').disabled = false;
     }
     
 }
