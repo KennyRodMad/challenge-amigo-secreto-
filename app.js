@@ -73,6 +73,29 @@ function sortearAmigo() {
     
 }
 
+// Implementa una función para reinicar el sorteo
+function nuevoSorteo() {
+    // Vaciar el array de amigos
+    amigos = [];
+
+    // Vaciar la lista visual
+    document.getElementById('listaAmigos').innerHTML = '';
+    document.getElementById('listaAmigos').style.display = 'flex';
+
+    // Limpiar campo de texto y resultado
+    document.getElementById('amigo').value = '';
+    document.getElementById('resultado').innerHTML = '';
+
+    // Habilitar controles
+    document.getElementById('amigo').disabled = false;
+    document.querySelector('.button-add').disabled = false;
+    document.getElementById('btnSortear').disabled = false;
+
+    // Deshabilitar "Nuevo sorteo"
+    document.getElementById('btnNuevo').disabled = true;
+}
+
+
 
 
 
