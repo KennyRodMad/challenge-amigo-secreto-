@@ -94,13 +94,3 @@ function nuevoSorteo() {
     // Deshabilitar "Nuevo sorteo"
     document.getElementById('btnNuevo').disabled = true;
 }
-
-
-
-
-
-
-
-
-
-
